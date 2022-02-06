@@ -1,23 +1,154 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home';
+import Shop from './components/Shop';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import ShoppingCart from './components/ShoppingCart';
+
+const ItemsHolder = [
+  {
+      name:'Item 1',
+      itemId: 1,
+  },
+  {
+      name:'Item2',
+      itemId: 2,
+  }
+];
+
+// const cartItemsHolder = [];
 
 function App() {
+
+  const [items, setItems] = useState(ItemsHolder);
+  const [cartItems, setCartItems] = useState([]);
+
+  async function addToCart(item){
+    // let cartItemsList = [...cartItems];
+    // let flag=0;
+    // let counter=0;
+    setCartItems(()=>{
+      // cartItems.forEach((cartItem, index)=>{
+      //   // if(cartItem.itemId)
+      //   if(cartItem.id===item.id){
+      //     counter++;
+      //     console.log(counter);
+      //     console.log("They match");
+      //     console.log("Before: ")
+      //     console.log(cartItems[index]);
+      //     cartItems[index].count+=item.count;
+      //     console.log("After: ");
+      //     console.log(cartItems[index]);
+      //     console.log(cartItems);
+      //     flag=1;
+      //     // return(
+      //     //   [...cartItems,{}]
+      //     // )
+      //   }
+      //   console.log("Cart Item id:"+cartItem.id)
+      // })
+      // if(!flag){
+      //   return(
+      //     [...cartItems, item]
+      //   )
+      // }
+      // for(let i=0;i<cartItems.length;i++){
+      //   if(cartItems[i].id===item.id){
+          // item.count=cartItems[i].count+1;
+          // cartItems[i].count=item.count;
+          // console.log("Item.count="+item.count);
+          // return(
+          //   cartItems
+          // )
+      //   }
+      // }
+      console.log("Enters this place")
+      // item.count+=1;
+      return(
+        [...cartItems,item]
+      )
+
+    });
+    // console.log(item);
+    console.log("Items in cart (addToCart Function):");
+    console.log(cartItems);
+  }
+
+  const updateCount = async (id,count) =>{
+    console.log("Enters update count method");
+    console.log("Cart items from update count method")
+    console.log(cartItems);
+    console.log("Parameters for update count:","id:",id,"count:",count);
+    // cartItems.map(cartItem=>(
+        // console.log(cartItem)
+        // console.log(cartItem.id===id)
+        // console.log({name:cartItem.name, id: cartItem.id, count: count})
+        // return cartItem
+        setCartItems(
+          cartItems.map(cartItem=>
+            cartItem.id===id?{name:cartItem.name, id: cartItem.id, count: count}: cartItem
+          )
+        )
+    // ))
+    // setCartItems(()=>{
+    //   cartItems.map(cartItem=>(
+    //     cartItem.id===id?{...cartItem, count:count} : cartItem
+    //   ))
+    // })
+  }
+
+  const deleteCartItem = async (cartItemId) =>{
+    
+    setCartItems(
+      cartItems.filter(cartItem=>cartItem.id!==cartItemId)
+    )
+    console.log("After deletion:")
+    console.log(cartItems);
+  }
+
+  useEffect(()=>{
+    console.log("Items in cart(App.js useEfffect): ")
+    console.log(cartItems);
+    setCartItems(cartItems);
+  },[cartItems])
+
+  const findCartItemById =(itemId)=>{
+    // let flag=0;
+    // let itemInCart;
+    // cartItems.forEach((cartItem)=>{
+    //   if(cartItem.id===itemId){
+    //     flag=1;
+    //     itemInCart = cartItem;
+    //     return cartItem
+    //   }
+    // })
+    // if(flag){
+    //     return itemInCart
+    // }
+    // return false
+    // setCartItems(cartItems)
+    for(let i=0; i<cartItems.length; i++){
+      console.log("Cart length find cart item method",cartItems.length)
+      console.log(cartItems[i])
+      console.log("FindCartItemById:","i: ",i,"Cart Item id: ",cartItems[i].id,"Id: ",itemId);
+      if(cartItems[i].id===itemId){
+        return cartItems[i]
+      }
+    }
+    return false
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop items={items} addToCart={addToCart} cartItems={cartItems} findCartItemById={findCartItemById} updateCount={updateCount} deleteCartItem={deleteCartItem}/>}/>
+          <Route path="/cart" element={<ShoppingCart cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem}/>}/>
+        </Routes>
+      </Router>
+      {console.log("Items in cart(App.js return method): ")}
+      {console.log(cartItems)}
     </div>
   );
 }
