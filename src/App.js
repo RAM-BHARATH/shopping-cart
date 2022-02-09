@@ -4,6 +4,7 @@ import Shop from './components/Shop';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ShoppingCart from './components/ShoppingCart';
+import NavBar from './components/NavBar';
 
 const ItemsHolder = [
   {
@@ -74,19 +75,19 @@ function App() {
     console.log(cartItems);
   }
 
-  const updateCount = async (id,count) =>{
+  const updateCount = async (id,plusOrMinusNum) =>{
     console.log("Enters update count method");
     console.log("Cart items from update count method")
     console.log(cartItems);
-    console.log("Parameters for update count:","id:",id,"count:",count);
+    console.log("Parameters for update count:","id:",id,"plusOrMinusNum:",plusOrMinusNum);
     // cartItems.map(cartItem=>(
         // console.log(cartItem)
         // console.log(cartItem.id===id)
-        // console.log({name:cartItem.name, id: cartItem.id, count: count})
+        // console.log({name:cartItem.name, id: cartItem.id, plusOrMinusNum: plusOrMinusNum})
         // return cartItem
         setCartItems(
           cartItems.map(cartItem=>
-            cartItem.id===id?{name:cartItem.name, id: cartItem.id, count: count}: cartItem
+            (plusOrMinusNum>0 || cartItem.count>1)?((cartItem.id===id)?{name:cartItem.name, id: cartItem.id, count: plusOrMinusNum}: cartItem):cartItem
           )
         )
     // ))
@@ -104,6 +105,10 @@ function App() {
     )
     console.log("After deletion:")
     console.log(cartItems);
+  }
+
+  const emptyCart = async() =>{
+    setCartItems([])
   }
 
   useEffect(()=>{
@@ -142,9 +147,9 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop items={items} addToCart={addToCart} cartItems={cartItems} findCartItemById={findCartItemById} updateCount={updateCount} deleteCartItem={deleteCartItem}/>}/>
-          <Route path="/cart" element={<ShoppingCart cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem}/>}/>
+          <Route path="/" element={<Home cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem}/>} />
+          <Route path="/shop" element={<Shop items={items} addToCart={addToCart} cartItems={cartItems} findCartItemById={findCartItemById} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}/>}/>
+          <Route path="/cart" element={<ShoppingCart cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}/>}/>
         </Routes>
       </Router>
       {console.log("Items in cart(App.js return method): ")}

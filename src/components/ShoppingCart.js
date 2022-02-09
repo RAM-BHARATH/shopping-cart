@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
-const ShoppingCart = ({ cartItems, updateCount, deleteCartItem }) =>{
+const ShoppingCart = ({ cartItems, updateCount, deleteCartItem, emptyCart }) =>{
 
     // const [currItemCount, setCurrItemCount] = useState(findCartItemById(currItemId)?findCartItemById(currItemId).count:1);
 
@@ -9,8 +8,9 @@ const ShoppingCart = ({ cartItems, updateCount, deleteCartItem }) =>{
         <div>
             <div>
                 <h1>Your cart</h1>
-                <button>Empty cart</button>
+                <button onClick={()=>(emptyCart())}>Empty cart</button>
                 <Link to="/shop">Go to Shop</Link>
+                <Link to="/">Go home</Link>
             </div>
             {cartItems.length>0?
             <ol>
