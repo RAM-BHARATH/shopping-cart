@@ -9,8 +9,8 @@ const ShoppingCart = ({ cartItems, updateCount, deleteCartItem, emptyCart }) =>{
             <div>
                 <h1>Your cart</h1>
                 <button onClick={()=>(emptyCart())}>Empty cart</button>
-                <Link to="/shop">Go to Shop</Link>
-                <Link to="/">Go home</Link>
+                {/* <Link to="/shop">Go to Shop</Link>
+                <Link to="/">Go home</Link> */}
             </div>
             {cartItems.length>0?
             <ol>

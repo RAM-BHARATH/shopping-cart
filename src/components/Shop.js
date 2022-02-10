@@ -15,12 +15,6 @@ const Shop = ({ items, addToCart, cartItems, findCartItemById, updateCount, dele
                 ))}
             </div>
             <ShoppingCart cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}/>
-            <Link to="/cart">
-                Go to Cart
-            </Link>
-            <Link to="/">
-                Go home
-            </Link>
         </div>
     )
 }

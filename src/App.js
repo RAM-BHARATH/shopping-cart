@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ShoppingCart from './components/ShoppingCart';
 import NavBar from './components/NavBar';
+import Cart from './components/Cart';
 
 const ItemsHolder = [
   {
@@ -147,9 +148,9 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Home cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem}/>} />
+          <Route path="/" element={<Home cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}/>} />
           <Route path="/shop" element={<Shop items={items} addToCart={addToCart} cartItems={cartItems} findCartItemById={findCartItemById} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}/>}/>
-          <Route path="/cart" element={<ShoppingCart cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}/>}/>
+          <Route path="/cart" element={<Cart cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}/>}/>
         </Routes>
       </Router>
       {console.log("Items in cart(App.js return method): ")}
