@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    // max-width: 480px;
+    background-color: rgb(138, 138, 138);
+    justify-content: space-evenly;
+    .navlink{
+        text-decoration: none;
+        margin:10px;
+        padding: 5px;
+        color: rgb(17, 17, 17);
+    }
+    .navlink:hover{
+        background-color: black;
+        color: rgb(230, 230, 230);
+        box-shadow: 5px 5px rgb(230, 230, 230);
+    }
+}
