@@ -56,6 +56,36 @@ const ItemsHolder = [
       itemCost: 9.99,
       imageLocation: './images/one-punch-man-suit.jpeg'
   },
+  {
+    name:'One Punch Man',
+    itemId: 9,
+    itemCost: 15.99,
+    imageLocation: './images/one-punch-man.jpeg'
+  },
+  {
+    name:'Pain',
+    itemId: 10,
+    itemCost: 9.99,
+    imageLocation: './images/pain.jpeg'
+  },
+  {
+    name:'Rock Lee',
+    itemId: 11,
+    itemCost: 15.99,
+    imageLocation: './images/rock-lee.jpeg'
+  },
+  {
+    name:'Ryuk',
+    itemId: 12,
+    itemCost: 10.99,
+    imageLocation: './images/ryuk.jpeg'
+  },
+  {
+    name:'Yagami Light',
+    itemId: 13,
+    itemCost: 13.99,
+    imageLocation: './images/yagami-light.jpeg'
+  }
 ];
 
 // const cartItemsHolder = [];
