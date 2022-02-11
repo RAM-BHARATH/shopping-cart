@@ -1,5 +1,6 @@
 .navbar {
   display: flex;
+  width: 100%;
   background-color: #8a8a8a;
   justify-content: space-evenly;
 }
@@ -9,7 +10,7 @@
   padding: 5px;
   color: #111111;
 }
-.navbar .navlink:hover {
+.navbar .navlink:active {
   background-color: black;
   color: #e6e6e6;
   box-shadow: 5px 5px #e6e6e6;
