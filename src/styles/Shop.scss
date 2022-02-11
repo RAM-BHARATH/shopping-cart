@@ -1,11 +1,11 @@
-.Shop{
+.Shop, .Cart{
   .items{
     display: flex;
     justify-content: space-around;
     width: 100%;
     max-width: 320px;
     margin: 10px auto;
-    background-color: aquamarine;
+    background-color: #7fffd4;
     flex-wrap: wrap;
     .item{
       border: 2px solid rgb(243, 243, 243);
@@ -56,17 +56,16 @@
 }
 
 @media(min-width:640px){
-  .Shop{
+  .Shop, .Cart{
     .items{
       max-width: 720px;
-      flex-wrap: wrap;
       .item{
-        max-width:320px;
+        max-width:280px;
         img{
           max-width: 240px;
         }
         .item-info{
-          max-width: 320px;
+          max-width: 280px;
         }
       }
     }
@@ -75,16 +74,16 @@
 }
 
 @media(min-width:1024px){
-  .Shop{
+  .Shop, .Cart{
     .items{
-      max-width: 920px;
+      max-width: 85%;
       .item{
-        max-width:320px;
+        max-width:280px;
         img{
           max-width: 240px;
         }
         .item-info{
-          max-width: 320px;
+          max-width: 280px;
         }
       }
     }

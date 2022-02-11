@@ -1,13 +1,13 @@
-.Shop .items {
+.Shop .items, .Cart .items {
   display: flex;
   justify-content: space-around;
   width: 100%;
   max-width: 320px;
   margin: 10px auto;
-  background-color: aquamarine;
+  background-color: #7fffd4;
   flex-wrap: wrap;
 }
-.Shop .items .item {
+.Shop .items .item, .Cart .items .item {
   border: 2px solid #f3f3f3;
   border: 2px solid #202020;
   margin: 10px auto;
@@ -15,19 +15,19 @@
   border-radius: 5px;
   padding: 5px;
 }
-.Shop .items .item img {
+.Shop .items .item img, .Cart .items .item img {
   width: 95%;
   max-width: 240px;
   padding: 5px;
 }
-.Shop .items .item .item-info {
+.Shop .items .item .item-info, .Cart .items .item .item-info {
   display: flex;
   justify-content: space-between;
   width: 95%;
   max-width: 320px;
   margin: 0 auto;
 }
-.Shop .items .item .add-to-cart {
+.Shop .items .item .add-to-cart, .Cart .items .item .add-to-cart {
   display: flex;
   width: 95%;
   max-width: 320px;
@@ -40,39 +40,38 @@
   justify-content: center;
   align-items: center;
 }
-.Shop .items .item .add-to-cart:active {
+.Shop .items .item .add-to-cart:active, .Cart .items .item .add-to-cart:active {
   transition: 200ms;
   color: #afafaf;
   background-color: #080808;
 }
 
 @media (min-width: 640px) {
-  .Shop .items {
+  .Shop .items, .Cart .items {
     max-width: 720px;
-    flex-wrap: wrap;
   }
-  .Shop .items .item {
-    max-width: 320px;
+  .Shop .items .item, .Cart .items .item {
+    max-width: 280px;
   }
-  .Shop .items .item img {
+  .Shop .items .item img, .Cart .items .item img {
     max-width: 240px;
   }
-  .Shop .items .item .item-info {
-    max-width: 320px;
+  .Shop .items .item .item-info, .Cart .items .item .item-info {
+    max-width: 280px;
   }
 }
 @media (min-width: 1024px) {
-  .Shop .items {
-    max-width: 920px;
+  .Shop .items, .Cart .items {
+    max-width: 85%;
   }
-  .Shop .items .item {
-    max-width: 320px;
+  .Shop .items .item, .Cart .items .item {
+    max-width: 280px;
   }
-  .Shop .items .item img {
+  .Shop .items .item img, .Cart .items .item img {
     max-width: 240px;
   }
-  .Shop .items .item .item-info {
-    max-width: 320px;
+  .Shop .items .item .item-info, .Cart .items .item .item-info {
+    max-width: 280px;
   }
 }
 
