@@ -12,19 +12,19 @@ const ItemsHolder = [
       name:'Naruto',
       itemId: 1,
       itemCost: 19.99,
-      imageLocation: './images/naruto.jpeg'
+      imageLocation: 'images/naruto.jpeg'
   },
   {
       name:'Death Note',
       itemId: 2,
       itemCost: 15.49,
-      imageLocation: './images/death-note.jpeg'
+      imageLocation: 'images/death-note.jpeg'
   },
   {
     name:'Genos',
     itemId: 3,
     itemCost: 9.99,
-    imageLocation: './images/genos.jpeg'
+    imageLocation: 'images/genos.jpeg'
   },
   {
       name:'Itachi Uchiha',
@@ -231,9 +231,9 @@ function App() {
       <Router>
         <NavBar cartItemCount={cartItems.length}/>  
         <Routes>
-          <Route path="shopping-cart/" element={<Home cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}/>} />
-          <Route path="shopping-cart/shop" element={<Shop items={items} addToCart={addToCart} cartItems={cartItems} findCartItemById={findCartItemById} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}  totalAmount={totalAmount}/>}/>
-          <Route path="shopping-cart/cart" element={<Cart cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart} totalAmount={totalAmount}/>}/>
+          <Route path="/shopping-cart/" element={<Home cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}/>} />
+          <Route path="/shopping-cart/shop" element={<Shop items={items} addToCart={addToCart} cartItems={cartItems} findCartItemById={findCartItemById} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}  totalAmount={totalAmount}/>}/>
+          <Route path="/shopping-cart/cart" element={<Cart cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart} totalAmount={totalAmount}/>}/>
         </Routes>
       </Router>
       {console.log("Items in cart(App.js return method): ")}
