@@ -231,9 +231,9 @@ function App() {
       <Router>
         <NavBar cartItemCount={cartItems.length}/>  
         <Routes>
-          <Route path="/" element={<Home cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}/>} />
-          <Route path="/shop" element={<Shop items={items} addToCart={addToCart} cartItems={cartItems} findCartItemById={findCartItemById} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}  totalAmount={totalAmount}/>}/>
-          <Route path="/cart" element={<Cart cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart} totalAmount={totalAmount}/>}/>
+          <Route path="shopping-cart/" element={<Home cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}/>} />
+          <Route path="shopping-cart/shop" element={<Shop items={items} addToCart={addToCart} cartItems={cartItems} findCartItemById={findCartItemById} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}  totalAmount={totalAmount}/>}/>
+          <Route path="shopping-cart/cart" element={<Cart cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart} totalAmount={totalAmount}/>}/>
         </Routes>
       </Router>
       {console.log("Items in cart(App.js return method): ")}
