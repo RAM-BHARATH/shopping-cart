@@ -229,9 +229,10 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <NavBar />  
         <Routes>
           <Route path="/" element={<Home cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}/>} />
-          <Route path="/shop" element={<Shop items={items} addToCart={addToCart} cartItems={cartItems} findCartItemById={findCartItemById} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}/>}/>
+          <Route path="/shop" element={<Shop items={items} addToCart={addToCart} cartItems={cartItems} findCartItemById={findCartItemById} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart}  totalAmount={totalAmount}/>}/>
           <Route path="/cart" element={<Cart cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart} totalAmount={totalAmount}/>}/>
         </Routes>
       </Router>

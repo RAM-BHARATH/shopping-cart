@@ -5,7 +5,7 @@ import '../styles/Home.css'
 const Home = ({cartItems, updateCount, deleteCartItem, emptyCart}) =>{
     return(
         <div className="home-page">
-            <NavBar />
+            {/* <NavBar /> */}
             <div className="visit-shop">
                 <div className="shop-tag">
                     Visit your favourite Anime Toy Spot!!
