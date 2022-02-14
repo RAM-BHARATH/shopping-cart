@@ -13,7 +13,7 @@ const Shop = ({ items, addToCart, cartItems, findCartItemById, updateCount, dele
                     <Item key={item.itemId} item={item} id={item.itemId} addToCart={addToCart} cartItems={cartItems} findCartItemById={findCartItemById} updateCount={updateCount}/>
                 ))}
             </div>
-            <ShoppingCart cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart} totalAmount={totalAmount}/>
+            {/* <ShoppingCart cartItems={cartItems} updateCount={updateCount} deleteCartItem={deleteCartItem} emptyCart={emptyCart} totalAmount={totalAmount}/> */}
         </div>
     )
 }
