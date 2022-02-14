@@ -5,16 +5,16 @@
     width: 100%;
     max-width: 320px;
     margin: 10px auto;
-    background-color: #7fffd4;
+    // background-color: #7fffd4;
     flex-wrap: wrap;
     .item{
-      border: 2px solid rgb(243, 243, 243);
-      // background-color: black;
-      border: 2px solid #202020;
+      // border: 2px solid rgb(243, 243, 243);
+      background-color: rgb(179, 179, 179);
+      // border: 2px solid #202020;
       margin: 10px auto;
       // width:260px;
       width: 95%;
-      border-radius: 5px;
+      // border-radius: 5px;
       // color: rgb(241, 241, 241);
       padding: 5px;
       // padding: 10px;
@@ -46,11 +46,18 @@
         justify-content: center;
         align-items: center;
       }
-      .add-to-cart:active{
+      .add-to-cart:hover{
         transition: 200ms;
         color: rgb(175, 175, 175);
         background-color: rgb(8, 8, 8);
       }
+      .add-to-cart:active{
+        box-shadow: 5px 5px rgb(255, 255, 255);
+        background-color: rgb(2, 61, 10);
+      }
+    }
+    .item:hover{
+      box-shadow: 5px 5px rgb(226, 226, 226);
     }
   }
 }

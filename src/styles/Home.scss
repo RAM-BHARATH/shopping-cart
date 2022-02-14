@@ -5,8 +5,10 @@
     background: url('../../public/images/anime.jpeg');
     background-size: cover;
     // background-repeat: no-repeat;
-    display: grid;
-    grid-template-rows: min-content minmax(90%,100%);
+    // display: grid;
+    // grid-template-rows: min-content minmax(90%,100%);
+    display: flex;
+    justify-content: center;
     .visit-shop{
         display: flex;
         // padding: 50% 10px;

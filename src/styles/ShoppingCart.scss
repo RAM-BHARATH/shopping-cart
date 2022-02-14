@@ -1,0 +1,40 @@
+.empty-cart{
+    box-sizing: border-box;
+    border: 1px solid rgb(175, 175, 175);
+    width: 80px;
+    height: 40px;
+    background-color: rgb(175, 175, 175);
+    margin: 0 auto;
+}
+.empty-cart:active, .empty-cart:hover{
+    background-color: rgb(209, 28, 28);
+    color: rgb(255, 255, 255);
+    box-shadow: 2px 2px rgb(243, 80, 80);
+}
+.empty-cart:active{
+    background-color: rgb(97, 1, 1);
+}
+.cart-item-options{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    *{
+        margin:10px 5px;
+    }
+    button{
+        box-sizing: border-box;
+        min-width: 20px;
+        border: 1px solid rgb(41, 40, 40);
+        background-color: rgb(175, 175, 175);
+
+    }
+    button:hover, button:active{
+        background-color: rgb(19, 19, 19);
+        color: rgb(175, 175, 175);
+    }
+    .delete:hover{
+        background-color: rgb(241, 10, 10);
+        color:rgb(230, 230, 230)
+    }
+}
