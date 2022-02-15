@@ -30,13 +30,13 @@ const ItemsHolder = [
       name:'Itachi Uchiha',
       itemId: 4,
       itemCost: 10.49,
-      imageLocation: './images/itachi.jpeg'
+      imageLocation: 'images/itachi.jpeg'
   },
   {
     name:'Jiraya',
     itemId: 5,
     itemCost: 15.99,
-    imageLocation: './images/jiraya.jpeg'
+    imageLocation: 'images/jiraya.jpeg'
   },
   {
       name:'Kakashi',

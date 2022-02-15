@@ -10,7 +10,7 @@ const Home = ({cartItems, updateCount, deleteCartItem, emptyCart}) =>{
                 <div className="shop-tag">
                     Visit your favourite Anime Toy Spot!!
                 </div>
-                <Link to="/shop" className="link-visit-shop">Visit Shop</Link>
+                <Link to="/shopping-cart/shop" className="link-visit-shop">Visit Shop</Link>
             </div>
         </div>
     )
