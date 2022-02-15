@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 // import '../styles/I.css'
 
 const Item = ({ item, id, addToCart, cartItems, findCartItemById, updateCount }) =>{
@@ -39,7 +39,7 @@ const Item = ({ item, id, addToCart, cartItems, findCartItemById, updateCount })
     }
     return(
         <div className="item" id={item.itemId}>
-            {/* <img src={`/shopping-cart/${item.imageLocation}`} alt={`${item.name}`}/> */}
+            <img src={`/shopping-cart/${item.imageLocation}`} alt={`${item.name}`}/>
             <div className="item-info">
                 <span>{item.name}</span>
                 <span>${item.itemCost}</span>
